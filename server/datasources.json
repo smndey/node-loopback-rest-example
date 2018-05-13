@@ -2,27 +2,6 @@
   "db": {
     "name": "db",
     "connector": "memory"
-  },
-  "DataAPI": {
-    "name": "DataAPI",
-    "baseURL": "",
-    "crud": false,
-    "connector": "rest",
-    "operations": [
-      {
-        "template": {
-          "method": "GET",
-          "url": "${baseURL}/user",
-          "headers": {
-            "accept": "application/json"
-          }
-        },
-        "functions": {
-          "getUser": [
-          ]
-        }
-      }
-    ]
   }
 }
 

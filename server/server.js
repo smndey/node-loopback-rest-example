@@ -2,8 +2,16 @@
 
 var loopback = require('loopback');
 var boot = require('loopback-boot');
+var settings = require('./datasources.local');
+
+var DataSource = require('loopback-datasource-juggler').DataSource;
 
 var app = module.exports = loopback();
+
+var resSource = require('loopback-connector-rest');
+
+var dataSource = new DataSource(resSource,settings.DataAPI);
+app.dataSource('DataAPI', dataSource);
 
 app.start = function() {
   // start the web server

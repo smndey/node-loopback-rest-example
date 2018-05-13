@@ -1,36 +1,4 @@
-// {
-//   "db": {
-//     "name": "db",
-//     "connector": "memory"
-//   },
-//   "DataAPI": {
-//     "name": "DataAPI",
-//     "baseURL": "https://api.github.com",
-//     "crud": false,
-//     "connector": "rest",
-//     "operations": [
-//       {
-//         "template": {
-//           "method": "GET",
-//           "url": "${baseURL}",
-//           "headers": {
-//             "accept": "application/json"
-//           }
-//         },
-//         "functions": {
-//           "getUser": [
-//           ]
-//         }
-//       }
-//     ]
-//   }
-// }
-
 module.exports = {
-    db: {
-        name: "db",
-        connector: "memory"
-    },
     DataAPI: {
     name: "DataAPI",
     baseURL: "https://api.github.com",
@@ -40,7 +8,7 @@ module.exports = {
       {
         template: {
           method: "GET",
-          url: "",
+          url: "https://api.github.com",
           headers: {
             accept: "application/json"
           }
