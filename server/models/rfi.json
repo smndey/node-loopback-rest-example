@@ -1,0 +1,39 @@
+{
+  "name": "rfi",
+  "base": "Model",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "title": {
+      "type": "string"
+    },
+    "date": {
+      "type": "date"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {
+    "listRfi": {
+      "accepts": [
+        {
+          "arg": "title",
+          "type": "string",
+          "required": true,
+          "description": ""
+        }
+      ],
+      "returns": [],
+      "description": "RFI listing",
+      "http": [
+        {
+          "path": "/rfi-list",
+          "verb": "get"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "db": {
+    "name": "db",
+    "connector": "memory"
+  },
+  "DataAPI": {
+    "name": "DataAPI",
+    "baseURL": "",
+    "crud": false,
+    "connector": "rest",
+    "operations": [
+      {
+        "template": {
+          "method": "GET",
+          "url": "https://graph.facebook.com/v2.9/oauth/access_token?client_id={appId}&redirect_uri={redirectUri}&client_secret={appSecret}&code={codeParameter}",
+          "headers": {
+            "accept": "application/json"
+          }
+        },
+        "functions": {
+          "accessToken": [
+            "appId",
+            "appSecret",
+            "redirectUri",
+            "codeParameter"
+          ]
+        }
+      }
+    ]
+  }
+}
