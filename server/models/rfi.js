@@ -1,25 +1,20 @@
 'use strict';
-var Promise = require('bluebird');
 
 module.exports = function(Rfi) {
-    Rfi.listRfi = function(title, callback) {
-        console.log(title);
-        var DataAPI = Rfi.app.datasources.DataAPI;
+    Rfi.listRfi = async (title) => {
+        let res =  {Name: title};
+        return res;
         
-        DataAPI.getUser().then((res) => {
-            callback(null, {'Title': title});
-        })
-        .catch((err) => {
-            callback(err, null);
-        })
     }
-    Rfi.remoteMethod('listRfi', {
-        accepts: {arg: 'title', type: 'string'},
-        returns: {arg: 'data', type: 'object'},
+    Rfi.afterRemote('listRfi', async (ctx, res) => {
+        //console.log(ctx);
+        //console.log(res);
+        ctx.res.header({
+            'Content-Type': 'somenath/dey',
+            'Content-disposition': 1234567890,
+            'File-Name' : `${res.Name}`
+        })
+        return
     });
-    
-    Rfi.customTitle = function() {
-        //console.log(this);
-    }
 
 };
